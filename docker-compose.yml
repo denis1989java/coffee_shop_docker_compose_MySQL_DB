@@ -1,0 +1,17 @@
+# Use root/example as user/password credentials
+version: '2.0'
+
+services:
+
+  db:
+    image: mysql:5.7.21
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - '3307:3306'
+  web:
+    image: coffeemysql
+    ports:
+      - "90:8080"    
+   
